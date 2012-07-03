@@ -6,11 +6,55 @@
 <style type="text/css">
     .important { color: #336699; }
 </style>
+<!-- Place this tag in the <head> of your document -->
+<script type="text/javascript">
+    window.___gcfg = {lang: 'en'};
+    (function()
+    {var po = document.createElement("script");
+        po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+       $(".nav").find("a").bind("click", function(e){
+           $(".nav").find("a").each(function() {
+               $(this).parent("li").removeClass("active");
+           });
+           $(this).parent("li").addClass("active");
+           // showing content div
+           var contentDiv = $(this).attr("href");
+           $(contentDiv).siblings("div.content").addClass("hidden");
+           $(contentDiv).removeClass("hidden");
+
+           e.preventDefault();
+       });
+    });
+</script>
 {% endblock %}
 {% block content %}
 <!-- Main hero unit for a primary marketing message or call to action -->
-<div class="hero-unit">
-    <h1>Hello, world!</h1>
+<div class="hero-unit content" id="home">
+    <h1>Independent Web Specialist, PHP developer, Project Manager </h1>
+    <p>
+        Hi, my name is Bartosz, im currently living over here, I'm {{ birthDate }} old
+        and I can help You with Your next big web project!
+    </p>
+</div>
+<div class="hero-unit hidden content" id="about">
+    <h1>About me</h1>
+    <p>Instead of writing a long and boring essay about me, I've accounted everything importand about me in those few compact facts</p>
+    <ul>
+        <li>Im currently x days </li>
+    </ul>
+    <p>
+        <a href="http://en.wikipedia.org/wiki/Hello_world" class="btn btn-primary btn-large">I don't get it</a>
+        <a href="http://en.wikipedia.org/wiki/Hello_world" class="btn btn-large">What's "Hello world!" &raquo;</a>
+    </p>
+</div>
+<div class="hidden content" id="experience">
+    <h1>Independent PHP developer and Project Manager</h1>
     <p>Yes, this is the phrase that I've wrote on my computer more times than anything else.<br>Well... maybe except "dupa".
         Which is basically the same as "Hello World", but shorter... And more funny!<br>
     I hope...</p>
@@ -24,18 +68,54 @@
 <div class="row">
     <div class="span4">
         <h2>My Tweets</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'profile',
+                rpp: 2,
+                interval: 30000,
+                width: 'auto',
+                height: 300,
+                theme: {
+                    shell: {
+                        background: '#ffffff',
+                        color: '#000000'
+                    },
+                    tweets: {
+                        background: '#000000',
+                        color: '#ffffff',
+                        links: '#8c8c8c'
+                    }
+                },
+                features: {
+                    scrollbar: false,
+                    loop: false,
+                    live: false,
+                    behavior: 'all'
+                }
+            }).render().setUser('brdesign').start();
+        </script>
     </div>
     <div class="span4">
         <h2>Find me on</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+        <dl class="dl-horizontal">
+            <dt>MojoLive</dt>
+            <dd><a href="http://mojolive.com/profile/brdesign">mojolive.com/profile/brdesign</a></dd>
+            <dt>Linked in</dt>
+            <dd><script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                <script type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/bartosz-rychlicki/3/134/5bb" data-format="hover" data-text="Bartosz Rychlicki"></script></dd>
+            <dt>Google Plus</dt>
+            <dd><!-- Place this tag where you want the badge to render -->
+                <div class="g-plus" data-href="https://plus.google.com/103147018499122651507?rel=author" data-width="250" data-height="69"></div></dd>
+            <dt>Facebook</dt>
+            <dd>If You want to catch a beer together poke <a href="https://www.facebook.com/brdesignpl" target="_blank">me on Facebook</a></dd>
+        </dl>
     </div>
     <div class="span4">
         <h2>Contact me</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+        <p>Feel free to drop me a line any time: <a href="mailto:bartosz.rychlicki@gmail.com">bartosz.rychlicki@gmail.com</a>
+            <em>(Im not afraid of You, robot!)</em></p>
     </div>
 </div>
 {% endblock %}

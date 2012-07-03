@@ -11,6 +11,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 
     {% block head %}
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -26,7 +27,8 @@
 </head>
 
 <body>
-
+<!-- it's my little ghost strap for bots that does not play nice -->
+<a href="ghost-trap/"><img src="images/pixel.gif" border="0" alt=" " width="1" height="1"></a>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -35,46 +37,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Project name</a>
+            <a class="brand" href="#">Bartosz Rychlicki</a>
+
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#home">Home</a></li>
+                    <!--
                     <li><a href="#about">About me</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#experience">Portfolio</a></li>
+                    -->
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
 </div>
-
 <div class="container">
     {% block content %}{% endblock %}
     <hr>
 
     <footer>
         {% block footer %}
-        &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
+        &copy; Copyright 2012, many thanks to <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>.
         {% endblock %}
     </footer>
 
 </div> <!-- /container -->
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="../assets/js/jquery.js"></script>
-<script src="../assets/js/bootstrap-transition.js"></script>
-<script src="../assets/js/bootstrap-alert.js"></script>
-<script src="../assets/js/bootstrap-modal.js"></script>
-<script src="../assets/js/bootstrap-dropdown.js"></script>
-<script src="../assets/js/bootstrap-scrollspy.js"></script>
-<script src="../assets/js/bootstrap-tab.js"></script>
-<script src="../assets/js/bootstrap-tooltip.js"></script>
-<script src="../assets/js/bootstrap-popover.js"></script>
-<script src="../assets/js/bootstrap-button.js"></script>
-<script src="../assets/js/bootstrap-collapse.js"></script>
-<script src="../assets/js/bootstrap-carousel.js"></script>
-<script src="../assets/js/bootstrap-typeahead.js"></script>
 
 </body>
 </html>
